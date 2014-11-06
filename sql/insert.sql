@@ -1,0 +1,16 @@
+INSERT INTO `platforman_platform` (`id`, `name`, `model`, `lob`, `type`, `pebit`, `product`, `phnum`) VALUES (1, 'Windu', '330', 'VOSTRO', 'CSMB', '32', 'Vostro 330', NULL);
+INSERT INTO `platforman_platform` (`id`, `name`, `model`, `lob`, `type`, `pebit`, `product`, `phnum`) VALUES (2, 'Firestone', 'One2320', 'INSPIRON', 'CSMB', '32', 'Inspiron One 2320', 'PH049AB');
+INSERT INTO `platforman_platform` (`id`, `name`, `model`, `lob`, `type`, `pebit`, `product`, `phnum`) VALUES (3, 'Andrews', '360', 'VOSTRO', 'CSMB', '32', 'Vostro 360', 'PH0497B');
+INSERT INTO `platforman_platform` (`id`, `name`, `model`, `lob`, `type`, `pebit`, `product`, `phnum`) VALUES (4, 'Lanikai', '9010', 'OPTIPLEX', 'BC', '32', 'OptiPlex 9010', 'PH1A00B');
+INSERT INTO `platforman_platform` (`id`, `name`, `model`, `lob`, `type`, `pebit`, `product`, `phnum`) VALUES (5, 'Olympic', 'ONE2330', 'INSPIRON', 'CSMB', '32', 'Inspiron One 2330', 'PH2A81B');
+INSERT INTO `platforman_platform` (`id`, `name`, `model`, `lob`, `type`, `pebit`, `product`, `phnum`) VALUES (6, 'Princeville', 'ONE_2710', 'XPS', 'CSMB', '32', 'XPS One 2710', 'PH1668B');
+INSERT INTO `platforman_platform` (`id`, `name`, `model`, `lob`, `type`, `pebit`, `product`, `phnum`) VALUES (7, 'Amazon', '9020', 'OPTIPLEX', 'BC', '64', 'OptiPlex 9020 AIO', 'PH2045D');
+INSERT INTO `platforman_platform` (`id`, `name`, `model`, `lob`, `type`, `pebit`, `product`, `phnum`) VALUES (8, 'Pirelli', '27', 'XPS', 'CSMB', '32', 'XPS 2720', 'PH2076D');
+INSERT INTO `platforman_platform` (`id`, `name`, `model`, `lob`, `type`, `pebit`, `product`, `phnum`) VALUES (9, 'Monster_HSW', '2350', 'INSPIRON', 'CSMB', '32', 'Inspiron 2350', 'PH4176D');
+INSERT INTO `platforman_platform` (`id`, `name`, `model`, `lob`, `type`, `pebit`, `product`, `phnum`) VALUES (10, 'Corse', '18', 'XPS', 'CSMB', '32', 'XPS 18', 'PH3743D');
+INSERT INTO `platforman_platform` (`id`, `name`, `model`, `lob`, `type`, `pebit`, `product`, `phnum`) VALUES (11, 'Rhine', '9030', 'OPTIPLEX', 'BC', '64', 'OptiPlex 9030 AIO', 'PH6A71D');
+INSERT INTO `platforman_platform` (`id`, `name`, `model`, `lob`, `type`, `pebit`, `product`, `phnum`) VALUES (12, 'Thun', '5348', 'INSPIRON', 'CSMB', '64', 'Inspiron 23 Model 5348', 'PH700AD');
+INSERT INTO `platforman_platform` (`id`, `name`, `model`, `lob`, `type`, `pebit`, `product`, `phnum`) VALUES (13, 'Corse_MLK', '1820', 'XPS', 'CSMB', '32', 'XPS 1820', 'PH8499D');
+INSERT INTO `platforman_platform` (`id`, `name`, `model`, `lob`, `type`, `pebit`, `product`, `phnum`) VALUES (14, 'Thun_lite', '3340', 'VOSTRO', 'CSMB', '32', 'Vostro 23-3340', 'PHA2A5D');
+INSERT INTO `platforman_platform` (`id`, `name`, `model`, `lob`, `type`, `pebit`, `product`, `phnum`) VALUES (15, 'Bluefin', '7440', 'OPTIPLEX', 'BC', '64', 'OptiPlex 7440 AIO', 'PH0A5AH');
+INSERT INTO `platforman_platform` (`id`, `name`, `model`, `lob`, `type`, `pebit`, `product`, `phnum`) VALUES (16, 'Cod', '3240', 'OPTIPLEX', 'BC', '64', 'OptiPlex 3240 AIO', 'PH0A33H');
