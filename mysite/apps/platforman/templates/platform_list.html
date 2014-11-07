@@ -1,0 +1,10 @@
+{% load staticfiles %}
+
+{% block content %}
+<h1>Platform List<h1>
+    <ul>
+        {% for platform in object_list %}
+            <li><a href="{{ platform.id }}">{{ platform.name }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}
