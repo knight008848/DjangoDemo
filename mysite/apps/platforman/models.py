@@ -13,7 +13,10 @@ class platform(models.Model):
     phnum = models.CharField(max_length=45, null=True, blank = True)
 
     def __unicode__(self):
-        return self.name
+        return self.name.capitalize()
+
+    def __str__(self):
+        return self.name.capitalize()
 
 class platformAdmin(admin.ModelAdmin):
     list_display = ('name', 'model', 'lob', 'product', 'phnum')
