@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 class platform(models.Model):
-    name = models.CharField(max_length=45)
+    name = models.CharField(max_length=45, unique=True)
     model = models.CharField(max_length=45)
     lob = models.CharField(max_length=45)
     type = models.CharField(max_length=45)
@@ -13,9 +13,6 @@ class platform(models.Model):
     phnum = models.CharField(max_length=45, null=True, blank = True)
 
     def __unicode__(self):
-        return self.name.capitalize()
-
-    def __str__(self):
         return self.name.capitalize()
 
 class platformAdmin(admin.ModelAdmin):

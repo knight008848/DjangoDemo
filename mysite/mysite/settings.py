@@ -12,19 +12,19 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '@s!44c$1%!dyl&7w94a7r0fq!v#$&1to4my+7yf^h7a8z@31q!'
+SECRET_KEY = 'ocbp01w)(!8@)1rxratz8@u^k4e-s^am&cnd760_4en#2v%pky'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-
 DEBUG = True
 
-TEMPLATE_DEBUG = DEBUG
+TEMPLATE_DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -36,10 +36,9 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
-    # edit by vincent
+
     'apps.platforman',
-    #end 
+    'apps.gtaman',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -64,8 +63,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'platform',
-        'USER': 'root',
-        'PASSWORD': 'support#sw1', #!SECURITY
+        'USER': 'test',
+        'PASSWORD': 'ev-2015',
+        'HOST':'localhost',
+        'PORT':'3306',
     }
 }
 
@@ -74,7 +75,7 @@ DATABASES = {
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC+8'
+TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
@@ -86,12 +87,4 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
-PROJECT_PATH = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
 STATIC_URL = '/static/'
-
-STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static/').replace('\\', '/')
-
-STATICFILES_DIRS = (
-	STATIC_ROOT,
-)
