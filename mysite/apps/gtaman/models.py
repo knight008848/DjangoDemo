@@ -14,6 +14,7 @@ class gcfnote(models.Model):
     destination = models.CharField(max_length=45)
     OSP = models.CharField(max_length=45)
     OSD = models.CharField(max_length=45)
+    OSV = models.CharField(max_length=45)
     muiflag = models.BooleanField(default=False)
     cfiflag = models.BooleanField(default=False)
     siaccount = models.CharField(max_length=45, null = True, blank = True)
@@ -25,9 +26,9 @@ class gcfnote(models.Model):
         return self.po
 
 class platformAdmin(admin.ModelAdmin):
-    list_display = ('po', 'level', 'family', 'timestamp', 'sdr')
-    search_fields = ('po',)
-    ordering = ('po',)
+    list_display = ('po', 'level', 'family', 'model', 'destination', 'timestamp','OSV', 'OSP', 'OSD', 'filepath')
+    search_fields = ('po', 'level', 'family','sdr')
+    ordering = ('timestamp',)
     # fields = ('name', 'model', 'lob', 'product', 'phnum')
 
 admin.site.register(gcfnote, platformAdmin)
