@@ -19,6 +19,6 @@ class platformAdmin(admin.ModelAdmin):
     list_display = ('name', 'model', 'lob', 'product', 'phnum')
     search_fields = ('lob',)
     ordering = ('name',)
-    # fields = ('name', 'model', 'lob', 'product', 'phnum')
+    # list_filter = ('lob', )
 
 admin.site.register(platform, platformAdmin)
