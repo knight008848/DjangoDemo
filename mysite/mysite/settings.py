@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
 
@@ -22,7 +21,7 @@ SECRET_KEY = 'ocbp01w)(!8@)1rxratz8@u^k4e-s^am&cnd760_4en#2v%pky'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-TEMPLATE_DEBUG = True
+TEMPLATE_DEBUG = DEBUG
 
 ALLOWED_HOSTS = []
 
@@ -36,9 +35,11 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
+    
+    # edit by vincent
     'apps.platforman',
     'apps.gtaman',
+    #end 
 )
 
 MIDDLEWARE_CLASSES = (
@@ -64,9 +65,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'platform',
         'USER': 'test',
-        'PASSWORD': 'ev-2015',
-        'HOST':'localhost',
-        'PORT':'3306',
+        'PASSWORD': 'ev-2015', #!SECURITY
     }
 }
 
@@ -81,7 +80,7 @@ USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)
