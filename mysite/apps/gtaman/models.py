@@ -26,10 +26,10 @@ class gcfnote(models.Model):
         return self.po
 
 class gcfAdmin(admin.ModelAdmin):
-    list_display = ('po', 'level', 'family', 'model', 'destination', 'timestamp','OSV', 'OSP', 'OSD', 'filepath')
-    # list_filter = ('OSP',)
+    list_display = ('po', 'level', 'family', 'model', 'ctomod', 'region', 'destination', 'timestamp','OSV', 'OSP', 'OSD', 'siaccount')
+    list_filter = ('family', 'OSV', 'level', 'ctomod', 'region')
 
-    search_fields = ('po', 'family','sdr')
+    search_fields = ('po', 'family', 'mod', 'sdr')
     ordering = ('-timestamp',)
     date_hierarchy = 'timestamp'
 
