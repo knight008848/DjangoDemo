@@ -1,6 +1,8 @@
 from django.shortcuts import render, get_object_or_404, render_to_response
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.http import HttpResponse
 from .models import platform
+from django.db import connection
 import datetime, time
 import csv
 
@@ -10,9 +12,42 @@ def index(request, template_name='platform_list.html'):
     """
     Return a list page of platforms.
     """
-    object_list = platform.objects.order_by('name')
+    p1 = request.GET.get('lob')
+    kwargs = {
+        # empty
+    }
+    
+    if p1 is not None:
+        kwargs ['lob'] = p1
+        
+    # platform list
+    object_list = platform.objects.order_by('name').filter( **kwargs )
+    
+    paginator = Paginator(object_list, 10)
+    page = request.GET.get('page')
+    
+    try:
+        object_list = paginator.page(page)
+    except PageNotAnInteger:
+        # If page is not an integer, deliver first page.
+        object_list = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range (e.g. 9999), deliver last page of results.
+        object_list = paginator.page(paginator.num_pages)
+    
+    # menu
+    lob_list = []
+    cursor = connection.cursor()
+    cursor.execute("""
+            SELECT lob
+            FROM platforman_platform
+            Group by lob""")
+    for row in cursor.fetchall():
+        lob_list.append(row[0].upper())
+        
+    # result    
     return render_to_response(template_name,
-                              {'object_list': object_list})
+                              {'object_list': object_list, 'lob_list': lob_list})
 
 def detail(request, object_id, template_name='platform_detail.html'):
     """

@@ -1,64 +1,41 @@
 
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="">
-        <meta name="author" content="">
-        <link rel="icon" type="image/x-icon" href="/favicon.ico">
+{% extends "base.html"%}
 
-        <title>Main Page</title> 
+{% block title %} Platform List {% endblock %}
 
-        <!-- Bootstrap core CSS-->
-        <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-        <!-- Bootstrap theme -->
-        <link href="/static/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
-        <!--Custom styless -->
-        <!--link href="static/css/your-style.css" rel="stylesheet"-->        
-    </head>
+{% block content %}
 
-    <body role="document">
-
-        <!-- Fixed navbar-->
-        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand" href="#">PLATFORMAN</a>
-            </div>
-            <div id="navbar" class="collapse navbar-collapse">
-              <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-              </ul>
-            </div><!--/.nav-collapse -->
-          </div>
-        </nav>
-
-            <div class="container theme-showcase" role="main">
-
-      <!-- Main jumbotron for a primary marketing message or call to action -->
+<!-- Main jumbotron for a primary marketing message or call to action -->
       <div class="jumbotron">
-        <h1>Hello!</h1>
+        <h1>Welcome!</h1>
         <p class="text-info">In this page, you can review the information of all actived platforms. And when you press below button, the platform.cfg file will be generated!</p>
       </div>
 
-{% block content %}
 <!-- List of platforms and link to details of them-->
 
       <div class="page-header">
         <h1>Platform List</h1>
       </div>
-      <div class="row">
-          <table class="table table-striped">
-            <thead>
-              <tr>
+      
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <div class="btn-group">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+              Filter by LOB
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="../platforman/?">All</a></li>
+              <li role="presentation" class="divider"></li>
+              {% for val in lob_list %}
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="../platforman/?lob={{ val }}">{{ val }}</a></li>
+              {% endfor %}
+            </ul>
+          </div> 
+        </div>
+        <table class="table table-striped table-hover">
+          <thead>
+              <tr class="success">
                 <th>Platform</th>
                 <th>Model</th>
                 <th>Lob</th>
@@ -81,27 +58,28 @@
             </tr>
         {% endfor %}
             </tbody>
-          </table>
+        </table>
+
+<div class="pagination">
+    <li>
+        {% if object_list.has_previous %}
+            <a href="?page={{ object_list.previous_page_number }}">&laquo</a>
+        {% endif %}
+    </li>    
+    <li>
+        {% if object_list.has_next %}
+            <a href="?page={{ object_list.next_page_number }}">&raquo</a>
+        {% endif %}
+    </li>
+</div>
+
+        <div class="panel-heading">
+          <!--Button for cfg file generated -->
+          <p>
+            <a href="../platforman/output">Export to INI</a>
+          </p>  
+        </div>
+
       </div>
+      
 {% endblock %}
-
-    <!--Button for cfg file generated -->
-    <p>
-      <a href="../platforman/output">Export to INI</a>
-    </p>
-
-      <div class="page-header">
-      </div>
-      <footer>
-        <p>&copy; Company 2014</p>
-      </footer>
-
-    </div> <!-- /container -->
-        
-        <!-- Bootstrap core JavaScript 
-        =================================================== -->
-        <!-- Placed at the end of the document so the pages load faster -->
-        <script type="text/javascript">
-        </script> 
-    </body>
-</html>

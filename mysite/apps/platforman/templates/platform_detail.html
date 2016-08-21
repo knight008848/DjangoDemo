@@ -1,6 +1,19 @@
-{% load staticfiles %}
+
+{% extends "base.html"%}
+
+{% block title %} {{object.name}} {% endblock %}
 
 {% block content %}
-<h1>{{object.name}} Detail<h1>
+
+<!-- Main jumbotron for a primary marketing message or call to action -->
+      <div class="jumbotron">
+        <h1>Hello!</h1>
+        <p class="text-info">In this page, you can review the detail of {{object.name}}!</p>
+      </div>
+
+
+<div>
+    <h1>{{object.name}} Details<h1>
+</div>
 
 {% endblock %}
