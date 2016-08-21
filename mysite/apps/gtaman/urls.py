@@ -3,6 +3,7 @@ import views
 
 urlpatterns = patterns(
     '',
+    url(r'^$', views.index, name='list'),
     url(r'^(?P<object_id>\d+)/$', views.detail, name='detail'),
     url(r'^(?P<object_id>\d+)/download/$', views.download_id, name='detail_id'),
     url(r'^download/(?P<ponumber>\w+)/$', views.download_po, name='download_po'),
