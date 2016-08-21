@@ -10,6 +10,7 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
 
     url(r'^$', hello),
+    url(r'^hello/$', hello),
     url(r'^platforman/', include('apps.platforman.urls')),
     url(r'^gtaman/', include('apps.gtaman.urls')),
 )

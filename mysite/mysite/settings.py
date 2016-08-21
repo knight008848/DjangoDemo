@@ -16,14 +16,15 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'ocbp01w)(!8@)1rxratz8@u^k4e-s^am&cnd760_4en#2v%pky'
+SECRET_KEY = '@s!44c$1%!dyl&7w94a7r0fq!v#$&1to4my+7yf^h7a8z@31q!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+
 DEBUG = True
 
 TEMPLATE_DEBUG = DEBUG
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -39,6 +40,7 @@ INSTALLED_APPS = (
     # edit by vincent
     'apps.platforman',
     'apps.gtaman',
+    'pagination',
     #end 
 )
 
@@ -50,6 +52,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'pagination.middleware.PaginationMiddleware',
 )
 
 ROOT_URLCONF = 'mysite.urls'
@@ -64,8 +67,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'platform',
-        'USER': 'test',
-        'PASSWORD': 'ev-2015', #!SECURITY
+        'USER': 'root',
+        'PASSWORD': 'support#sw1', #!SECURITY
     }
 }
 
@@ -86,4 +89,12 @@ USE_TZ = False
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
+PROJECT_PATH = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 STATIC_URL = '/static/'
+
+STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static/').replace('\\', '/')
+
+STATICFILES_DIRS = (
+	STATIC_ROOT,
+)
