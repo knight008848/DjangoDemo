@@ -1,0 +1,58 @@
+
+{% extends "base1.html"%}
+
+{% block title %} {{object.po}} {% endblock %}
+
+{% block content %}
+
+<!-- Main jumbotron for a primary marketing message or call to action -->
+      <div class="jumbotron">
+        <h1>{{object.po}}</h1>
+      </div>
+
+
+      <div class="row">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Level</th>
+                <th>Platform</th>
+                <th>Model</th>
+                <th>Destination</th>
+                <th>Region</th>
+                <th>CTOMOD</th>
+                <th>OS Type</th>
+                <th>OS</th>
+                <th>SI account</th>
+                <th>Created Time</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="info">
+                <td>{{ object.level }}</a></td>
+                <td>{{ object.family }}</td>
+                <td>{{ object.model }}</td>
+                <td>{{ object.destination }}</td>
+                <td>{{ object.region }}</td>
+                <td>{{ object.ctomod }}</td>
+                <td>{{ object.OSV }}</td>
+                <td>{{ object.OSP }} {{ object.OSD }}</td>
+                <td>{{ object.siaccount }}</td>
+                <td>{{ object.timestamp |date:"Y-m-d H:i:s" }}</td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+      
+      <pre>{{ object.mod }}</pre>
+      <pre>{{ object.sdr }}</pre>
+
+    <!--p>
+      <a href="../{{object.id}}/download">{{ object.filepath }}</a>
+    </p-->
+
+    <p>
+      <a href="../download/{{object.po}}">Download GCF {{ object.po }}_GCF.XML</a>
+    </p>
+
+{% endblock %}
